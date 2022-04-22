@@ -32,7 +32,7 @@ app.post("/register", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.create({ email, password });
-    res.status(200).json(user);
+    res.status(201).json(user);
   } catch (error) {
     res.status(500).json({ message: "Internal server error" });
   }
